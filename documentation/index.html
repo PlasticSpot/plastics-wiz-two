@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title></title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		pre,code { font-family:"Consolas", Courier New, Courier, monospace; padding:15px; background:#f7f7f7; margin:0px 0px 18px; border:1px solid #e5e5e5; line-height:18px; color:#000 }
+code { padding:0px 3px; background-image:none; background:#f5f5f5; border:none }
+pre { white-space:pre-wrap; white-space:-moz-pre-wrap; white-space:-pre-wrap; white-space:-o-pre-wrap; word-wrap:break-word }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	  <h3 class="center alt"> Documentation by &ldquo;Ansonika&rdquo; v1.1</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;MAGNIFICA - HTML Site template&rdquo;</h1>
+		
+		<div class="borderTop">
+		  <div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 25 March 2020<br>
+                    Last update: 13 September<br>
+					By: Ansonika</strong>
+			  </p>
+	    </div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you are happy with the theme, please <strong>TAKE A MOMENT TO RATE IT</strong> from your DOWNLOADS PAGE.
+Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files, Structure and basic modifications</a></li>
+<li><a href="#php">PHP contact form, newsltetter form and plan a visit form</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#credits">Sources and Credit</a></li>
+            <li><a href="#updates">UPDATES</a></li>
+		</ol>
+
+      <hr>
+        
+  <h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+	  <p> This theme has a fixed centered layout 1170px. It's based on Boostrap framework grid. It's ULTRA RESPONSIVE!!<strong> It comes now with 2 different layouts!</strong><br>
+     Create with Magnifica every type of questionnaire wizard. In this period we focus the demo on Coronavirus (COVID-19) emergency. Use Magnifica to create your internal questionnarie: help users or the employees of a company in decision-making whether to seek professional medical advice or not. It have also nice UI/UX form elements design: radio, checkbox, float labels. Branch Wizard is Supported: user view differen steps based on the answer provided. The results will be sent via email and confirmation email is sent to the user who fill the form. It comes also with a faq page.</p>
+<hr>
+
+		<h3 id="cssFiles"><strong>B) CSS Files Structure and basic modfication</strong> - <a href="#toc">top</a>	  </h3>
+	  <p>The css files are inside the css folder (not minified and minified versions included) .To modify colors, typografy, button style ecc....find the realtive comment line in style.css. 
+      <strong>We reccomend to apply every changes in css/custom.css in order to makes future updates easly to apply.</strong>
+      Below how the file is organized:</p>
+<p>1. SITE STRUCTURE and TYPOGRAPHY<br>
+  - 1.1 Typography<br>
+  - 1.2 Buttons<br>
+  - 1.3 Structure</p>
+<p>2. CONTENT<br>
+  - 2.1 Wizard<br>
+  - 2.2 Success submit<br>
+  - 2.3 Inner pages</p>
+<p>3. COMMON<br>
+  - 3.1 Misc<br>
+  - 3.2 Spacing<br>
+  - 3.3 Float Labels</p>
+
+<p><strong>Change the logo<br>
+</strong>To change the logo, simply use your PNG24 file (suggested logo height is 45px). </p>
+
+  
+
+<p><strong>
+    Add one more step to the wizard</strong><br>
+Each step is defined by a div, so simply duplicate one of them. Below an example of the structure:</p>
+  <pre>&lt;div class=&quot;step&quot;&gt;
+	your content....                <br>&lt;/div&gt;&lt;!-- end step--&gt;</pre>
+    
+    <p><strong>Make an input field, select or radio/checkbox required or not.</strong><br>
+Simply add or remove the class "required" to the element. To change the error message go to js/common_script.js and under the section jQuery Validation Plugin at line 4957 aprox, then recreate the minfied version.<br>
+<br>
+   <strong>Add one more questions with checkbox answer</strong></strong><br>
+   Open the HTML page. As you can see the name of the input has to be the same with at the end [], each one have a different value. in the example below we add 2 more checkbox questions: </p>
+  <pre>&lt;h3&gt;Question?&lt;/h3&gt; <br>
+&lt;div class=&quot;form-group&quot;&gt;<br>&lt;label class=&quot;container_check version_2&quot;&gt;Answer 1
+&lt;input type=&quot;checkbox&quot; value=&quot;Answer 1&quot; name=&quot;question_1[]&quot; class=&quot;required&quot;&gt;
+&lt;/label&gt;<br>&lt;/div&gt;<br>
+&lt;div class=&quot;form-group&quot;&gt;<br>&lt;label class=&quot;container_check version_2&quot;&gt;Answer 2
+&lt;input type=&quot;checkbox&quot; value=&quot;Answer 2&quot; name=&quot;question_1[]&quot; class=&quot;required&quot;&gt;
+&lt;/label&gt;<br>&lt;/div&gt;
+
+$message .= &quot;\n1) Question?\n&quot; ;<br>foreach($_POST[question_1] as $value) <br>{ <br>	$message .=   &quot;- &quot; .  trim(stripslashes($value)) . &quot;\n&quot;; <br>};<br></pre>
+
+<p><strong>Antispam protection</strong>:<br>spam bots usually disable javascripts to avoid the jquery validation or automatically fill all the input fields and send the email. Now the php submission script link is removed from the html and placed inside the the js script. So if the js will be disabled, the form will be not processed. The js script check also if the hidden input field (id website) is filled by the spam bot...if filled the form will be not processed.
+<pre>LEAVE THE HIDDEN INPUT FIELD WEBSITE for the reason above<br>&lt;input id=&quot;website&quot; name=&quot;website&quot; type=&quot;text&quot; value=&quot;&quot;&gt;
+</pre>
+
+<p><strong>
+    Wizard linear (without branch) (take as reference index.html/without_branch_layout_2.html + send_email_without_branch.php )</strong><br></p>
+    <pre>A simplified version without branch has bee added in this version. Below the structure:
+
+&lt;div class=&quot;step&quot;&gt;
+	your content....                <br>&lt;/div&gt;&lt;!-- end step--&gt;
+
+&lt;div class=&quot;step&quot;&gt;
+	your content....                <br>&lt;/div&gt;&lt;!-- end step--&gt;
+
+&lt;div class=&quot;step&quot;&gt;
+	your content....                <br>&lt;/div&gt;&lt;!-- end step--&gt;
+
+&lt;div class=&quot;submit step&quot; id=&quot;end&quot;&gt;
+	your content....                <br>&lt;/div&gt;&lt;!-- end step--&gt;</pre>
+    
+ <p><strong>
+    Wizard with single branch (take as reference index-2.html/with_branch_layout_2.html + send_email_with_branch.php )</strong><br></p>
+  <pre>
+In this demo there are 2 branches. Each targeted step is defined by the <strong>class=&quot;branch&quot;</strong>,<br>the <strong>input value</strong> as the <strong>step id</strong>. 
+Of course is radio based, so you have to give the same input name to the radios. 
+In this example if a users reply yes goes to a specific target/branch step...then continue with the normal steps order.
+If reply no, it paypass the branched step, a continue with the normal steps order.
+
+ &lt;!-- /Start Branch ============================== --&gt;<br>&lt;div class=&quot;step&quot; <strong>data-state=&quot;branchtype&quot;</strong>&gt;<br>	                         <br>&lt;h3 class=&quot;main_question&quot;&gt;&lt;i class=&quot;arrow_right&quot;&gt;&lt;/i&gt;Are you experiencing any difficulty in breathing?&lt;/h3&gt;<br>&lt;div class=&quot;form-group&quot;&gt;<br>&lt;label class=&quot;container_radio version_2&quot;&gt;Yes<br>&lt;input type=&quot;radio&quot; name=&quot;question_3&quot; <strong>value=&quot;Yes&quot;</strong> class=&quot;required&quot;&gt;<br>&lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;<br>&lt;/label&gt;<br>&lt;label class=&quot;container_radio version_2&quot;&gt;No<br>&lt;input type=&quot;radio&quot; name=&quot;question_3&quot; <strong>value=&quot;No&quot;</strong> class=&quot;required&quot;&gt;<br>&lt;span class=&quot;checkmark&quot;&gt;&lt;/span&gt;<br>&lt;/label&gt;<br>&lt;/div&gt;<br>&lt;/div&gt;
+
+&lt;!-- /difficulty in breathing &gt; Yes ============================== --&gt;<br>&lt;div class=&quot;branch&quot; <strong>id=&quot;Yes&quot;</strong>&gt;<br>	&lt;div class=&quot;step&quot; data-state=&quot;No&quot;&gt;
+		...
+	&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;!-- /step--&gt;
+
+&lt;!-- /difficulty in breathing &gt; No ============================== --&gt;<br>  &lt;div class=&quot;step&quot;<strong>id=&quot;No&quot;</strong>&gt;
+		...
+	&lt;/div&gt;<br>&lt;!-- /step--&gt;
+
+
+<strong>data-state=&quot;&quot;</strong> define the target of the each step.
+
+
+PHP FILE<br>A particular mention to this script portion<br>
+<em>This portion tell to send only the results only if the input has been filled..</em><br>if (isset($_POST[question_4]) &amp;&amp; $_POST[question_4] != &quot;&quot;)<br>			{<br>				<br>			}
+
+<em>This portion is a simple checkboxes results. </em>
+if (isset($_POST[question_4]) &amp;&amp; $_POST[question_4] != &quot;&quot;)<br>		{<br>		$message .= &quot;\Please tick any one of the following symptoms that can be applies to you:\n&quot;;<br>		foreach($_POST[question_4] as $value)<br>			{<br>				$message.= &quot;- &quot; . trim(stripslashes($value)) . &quot;\n&quot;;<br>			};<br>		}<br></pre>
+
+
+<p><strong>THE GRID</strong><br> 
+      Please refer to this <a href="http://getbootstrap.com/">documentation Boostrap</a></p>
+    
+      <hr>
+      <h3 id="php"><strong>C) PHP files </strong> - <a href="#php">top</a></h3>
+      <p>The item mainly use two method to send the email. <strong style="color:red"><br>
+      We strongly reccomend before to edit the item to test the version that works better on your host based on your needs.</strong><br>
+      You can change the method via js/wizard_without_branch.js, js/wizard_with_branch.j. Please change the path to the php file as you can see below and explained in the comments (in this example we take the  index.html ( js/wizard_without_branch.js), but the logic is like the others versions:</p>
+      <p>jQuery(function ($) {<br>
+&quot;use strict&quot;;<br>
+// Chose here which method to send the email, available:<br>
+// Simple phpmail text/plain &gt; send_email_without_branch.php (default)<br>
+// PHPMailer text/html &gt; phpmailer/without_branch_phpmailer.php<br>
+// PHPMailer text/html SMTP &gt; phpmailer/without_branch_phpmailer_smtp.php<br>
+// PHPMailer with html template &gt; phpmailer/without_branch_phpmailer_template.php<br>
+// PHPMailer with html template SMTP&gt; phpmailer/without_branch_phpmailer_template_smtp.php<br>
+......
+      </p>
+      <p><strong>1) PHP mail </strong>( Simple phpmail text/plain &gt; send_email_without_branch.ph)<br>
+      This method is supported by the most ISP; rarely requires some changes related to the php mail headers.      </p>
+      <p>If you doesn't recieve the email please first check:<br>
+      1) Your spam folder<br>
+      2) If you hosting requires special settings (SMTP Authentication)<br>
+      3) If your sender email  has to be the same from your hosting provider </p>
+      <p>Main settings:<br>
+      1) $to =  change with your email address<br>
+      2) Edit the text as you need (\n is equal to a br)<br>
+      3) DelayRedirect on body tag = increse the value to get more delay on the redirect page<br>
+     4) window.location = "your redirect page"</p>
+      <p><strong>2) PHPMailer</strong><br>
+      If your host/ISP requires some specials settings, or SMTP Authenticantion or if with the PHPmail method above the email is not delivered...try with PHPMailer method.</p>
+      <p> <strong>2.1) </strong>PHPMailer text/html &gt; phpmailer/without_branch_phpmailer.php: This version send an email with basic html support on text</p>
+      <p>//Recipients - main edits<br>
+$mail-&gt;setFrom('info@magnifica.com', 'Message from MAGNIFICA');                // Email Address and Name FROM<br>
+$mail-&gt;addAddress('jhon@magnifica.com', 'Jhon Doe');                           // Email Address and Name TO - Name is optional<br>
+$mail-&gt;addReplyTo('noreply@magnifica.com', 'Message from MAGNIFICA');          // Email Address and Name NOREPLY<br>
+$mail-&gt;isHTML(true); <br>
+$mail-&gt;Subject = 'Message from MAGNIFICA';                                     // Email Subject</p>
+      <p><strong>2.2)</strong> PHPMailer text/html SMTP &gt; phpmailer/without_branch_phpmailer_smtp.php. This version is like above but with SMTP Authentication. We suggest to contact your host/ISP to get the correct info to set this feature (usally Username, Password ,SMTP Server, Port, Encryption if required)</p>
+      <p>$mail-&gt;Host       = smtpserver;           // Set the SMTP server to send through<br>
+$mail-&gt;Username   = 'username';                 // SMTP username<br>
+$mail-&gt;Password   = 'password';                        // SMTP password<br>
+$mail-&gt;SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged<br>
+$mail-&gt;Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above</p>
+      <p>plus edit the recipients</p>
+      <p><strong>2.3)</strong> PHPMailer with html template &gt; phpmailer/without_branch_phpmailer_template.php. This version is without SMTP and send the message inside  an HTML template. It's like 2.1 version but with and HTML template (template-email.html) for the main message and for the confirmation page sent to the use who fill the form (confirm.html)</p>
+      <p><strong>2.4)</strong> PHPMailer with html template SMTP&gt; phpmailer/without_branch_phpmailer_template_smtp. This version is like above but with SMTP Authentication, so for the settings view 2.2 paragraph.</p>
+      <p><strong>NOTE ABOUT THE HTML EMAIL TEMPLATE</strong><br>
+      The email template has been tested on various email clients (desktop and mobiles). But, maybe you know, it's quite impossible to provide an email template that looks equal on all email clients due they have different supports. The email template degrade nicely to maxime the compatibility. Email Template design it's beyond the scope of this item and support, you can implement with your own or drive to a most simple method to send the email (1, 2.1, 2.2).</p>
+      <p><strong>Edit the email template with your images</strong><br> 
+        Put your logo in the images folder. To reduce spam issue and email weight, images must be upload on your online site/server and the html looks like the example below:<br>        
+      &lt;img src=&quot;http://yourdomain/phpmailer/images/logo.png&quot; border=&quot;0&quot; width=&quot;54&quot; height=&quot;60&quot; alt=&quot;&quot; /&gt;</p>
+<hr>
+<h3 id="javascript"><strong>D) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>This theme use these Javascript (minified versions included). i've included all the common theme scripts in a single file for a fast edit and load (or if you prefer you can find the same js in separate files in js folder).</p>
+      <p><strong>common_scripts.js content:
+      </strong>      
+      <ul>
+      <li>Bootstrap.js</li>
+      <li>jQuery UI</li>
+      <li>jQuery.wizard</li>
+      <li>jQuery Validation</li>
+      <li>Float Labels</li>
+      </ul>
+      </p>
+<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+	  <p>I've used the following images, icons or other files as listed. For the js listed below, you can find the more documentation on the relative sites.
+		
+	  <ul>
+        <li><a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a></li>       
+        <li><a href="https://modernizr.com/">Modernirz</a></li>
+        <li><a href="http://daneden.github.io/animate.css/">Animate.css</a></li>
+        <li><a href="http://jquery.com/">Jquery</a></li>
+        <li><a href="https://github.com/jquery/jquery-ui">Jquery ui</a></li>
+        <li><a href="http://owlgraphic.com/owlcarousel/">Owl carousel</a></li>
+        <li><a href="http://jqueryvalidation.org/">Jquery validation</a></li>
+        <li><a href="https://github.com/kflorence/jquery-wizard/">jQuery Wizard</a></li>
+        <li><a href="https://pryley.github.io/float-labels.js">FLoat Labels</a></li>
+        <li><a href="http://pixelcog.github.io/parallax.js/">Jquery Parallax</a></li>
+        <li><a href="https://github.com/hernansartorio/jquery-nice-select">Jquery Nice Select</a></li>
+        <li><a href="https://www.bing.com/">Bing Covid Statistic Map</a></li>
+	  </ul>
+    <p>Images are not included.</p>
+		<hr>
+        
+  	<h3 id="updates"><strong>F) UPDATES</strong> - <a href="#toc">top</a></h3>
+    <h4>Version 1.1 13 September 2020</h4>
+      <ul>
+        	<li>Updated Bootstrap Library</li>
+            <li>Updated jQuery Library</li>
+            <li>Updated Google font link</li>
+            <li>Added a version without branch</li>
+            <li>Changed icons in prevention page</li>
+            <li>Reduced general body font size to 14px</li>
+            <li>Added Real time statistic in prevention page provided from Bing</li>
+            <li>Added a second layout</li>
+            <li>Added PHPMailer with SMTP and HTML support</li>
+      </ul>
+       <pre>HOW TO UPDATE FROM PREVIOUS VERSION
+
+1) Update the following files: css/bootstrap.min.css, css/bootstrap.css, js/common_scripts.min.js
+
+2) Update the script on footer page to &lt;script src="<a target="_blank" href="js/jquery-3.5.1.min.js" rel="noreferrer noopener">js/jquery-3.5.1.min.js</a>"&gt;&lt;/script&gt;
+
+3) Update the link in the head of the pages
+
+4) We change a little the files order. The version without branch and new layout now is the default one. New layout but with branch &gt; index-2.html 
+Takes as reference the new files: index.html,without_branch_layout_2.html, js/wizard_without_branch.js, send_email_without_branch.php 
+
+5) Copy the new icons from the img folder
+
+6) Update css/style.css or only the body selector
+
+7) Update the page prevention.html
+
+8) New styles in css/style.css section 2.4.
+
+9) Copy the folder phpmailer and see the documentation section above to see how it works</pre>
+<hr>
+<h3>Maybe you are interested in</h3>
+<p><a href="https://1.envato.market/A6oJN"><img src="assets/images/01-potenza-job-application-form-wizard.jpg" width="590" height="300"></a></p>
+<p><a href="https://1.envato.market/0oe9P"><img src="assets/images/01-satisfyc-statisfaction-survey-form-wizard.jpg" width="590" height="300"></a></p>
+
+<p><a href="https://1.envato.market/JAL9r"><img src="assets/images/01-wilio-survey-quotation-review-form-wizard.jpg" width="590" height="300"></a></p>
+<p><a href="https://1.envato.market/e2ryr"><img src="assets/images/01-steps-form-wizard-with-branches.jpg" width="590" height="300"></a></p>
+
+<p><a href="https://1.envato.market/5GM2j"><img src="assets/images/01-Multipurpose-Working-Configurator-Wizard.jpg" width="590" height="300"></a></p>
+<p><a href="https://1.envato.market/05xEM"><img src="assets/images/01-quote-quotation-survey-form-wizard.jpg" width="590" height="300"></a></p>
+<p><a href="https://1.envato.market/JAL5R"><img src="assets/images/01-annova-survey-wizard.jpg" width="590" height="300"></a></p>
+<p><a href="https://codecanyon.net/item/reviewer-rating-and-review-wizard-html-template/9530385?ref=ansonika"><img src="assets/images/01-Reviewer-rating-wizard-template.jpg" width="590" height="300"></a></p>
+<p><a href="https://1.envato.market/ovXQb"><img src="assets/images/01_mastenia_responsive_forms_wizard.jpg" width="590" height="300"></a></p>
+<p><strong><br>
+    <img src="assets/images/avatar.jpg" width="80" height="80"><br>
+	  <br>
+    Once again, thank you so much for purchasing this theme. Please take a moment to rate it from your Downloads page.</strong><br> 
+		  
+<h3>Need support?</h3>
+For support contact me using the form on my profile page <span class="text_medium">with subject <strong>[ThemeForest Support]  Template name</strong></span>, or via the Support Tab on the item page. You will receive an answer within 24-48 hours (working days)  GMT  +1.
+<ul>
+<li>I only provide support for fixing bugs or small issues on my items.</li>
+<li>I don't provide free support for additional custom modifications to the items.</li>
+<li>Please provide your site link, screenshots and other information about your issue.</li>
+<li><a href="http://themeforest.net/page/item_support_policy" rel="nofollow"><strong>Envato support terms</strong></a></li>
+</ul>
+
+<h3>Need customization or availability for freelance projects?</h3>
+Just send an email via profile page form; please don't forget to specify:
+<ul>
+<li>if you are a company, agency or private user</li>
+<li>all the information about your projects, needs, site urls, project sheet, etc..</li>
+<li>from which country you are</li>
+<li>if you have a deadline</li>
+<li>if you have basic knowledge of  HTML , CSS, JS,  PHP</li>
+</ul>
+<p class="append-bottom alt large"><strong>Ansonika</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
